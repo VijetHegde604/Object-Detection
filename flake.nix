@@ -35,17 +35,6 @@
 
           # Stitch together the LD_LIBRARY_PATH so downloaded wheels can find system libraries
           export LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath runtimeLibs}:$LD_LIBRARY_PATH"
-
-          # Create a virtual environment using uv if it doesn't exist
-          if [ ! -d ".venv" ]; then
-            echo "Creating virtual environment with uv..."
-            uv venv
-          fi
-
-          # Activate the environment
-          source .venv/bin/activate
-
-          echo "Environment active"
         '';
       };
     };
