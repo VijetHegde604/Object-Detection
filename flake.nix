@@ -22,7 +22,7 @@
     {
       devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [
-          python311
+          python313
           uv
           stdenv.cc
           bashInteractive
