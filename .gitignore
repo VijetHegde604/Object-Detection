@@ -16,3 +16,5 @@ Object_Tracking
 
 my_dataset/
 labels/
+debug_vis/
+runs/detect/Object_Tracking
