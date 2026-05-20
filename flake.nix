@@ -26,6 +26,7 @@
           uv
           stdenv.cc
           bashInteractive
+	  jupyter-all
         ];
 
         shellHook = ''
