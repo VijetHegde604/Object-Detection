@@ -1,0 +1,9 @@
+path: my_dataset
+
+train: images/train
+val: images/val
+
+names:
+  0: ADVISORY_SPEED_MPH
+  1: DIRECTIONAL_ARROW_AUXILIARY
+  2: DO_NOT_ENTER
