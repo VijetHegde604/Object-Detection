@@ -1,7 +1,7 @@
 # Object Detection
 ## TL;DR
 - **Task:** 3-class object detection
-- **Model family:** YOLOv8
+- **Model family:** YOLOv8n (Tried YOLOv8s and YOLOv8m but couldnt train due to low VRAM)
 - **Best run so far:** `runs/detect/train-3`
 - **Best metric:** **mAP50-95 = 0.85836** (epoch 54)
 - **Classes:**
