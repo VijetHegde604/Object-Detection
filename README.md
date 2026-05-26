@@ -44,3 +44,43 @@ This is the general workflow followed in the notebook:
 
   **Tried my best in two days** 
   **Looking forward to your suggestions**
+
+## Development environment (Nix + direnv)
+
+This repository uses a Nix flake with two dev shells:
+
+- **Default CPU shell**: `nix develop`
+- **CUDA shell**: `nix develop .#cuda`
+
+### Direnv setup
+
+1. Install `direnv` and `nix-direnv`.
+2. Allow the repo once:
+   ```bash
+   direnv allow
+   ```
+3. By default, `.envrc` loads the CPU shell.
+
+To switch to CUDA mode for direnv:
+
+```bash
+NIX_SHELL_FLAVOR=cuda direnv reload
+```
+
+To switch back to CPU mode:
+
+```bash
+NIX_SHELL_FLAVOR=default direnv reload
+```
+
+### Runtime notes
+
+- CPU shell exports `UV_TORCH_BACKEND=cpu`.
+- CUDA shell exports `UV_TORCH_BACKEND=cu126` and CUDA paths (`CUDA_PATH`, `CUDA_HOME`, `CUDA_ROOT`).
+- `LD_LIBRARY_PATH` is configured so Python wheels can find native libs in both modes.
+
+## Recent updates
+
+- Flake refactored to provide separate **CPU** and **CUDA** shells.
+- Added `.envrc` so `direnv` works out of the box with this flake.
+- Updated setup instructions for development and shell switching.
